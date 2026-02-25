@@ -1,3 +1,9 @@
+
+import mongoose from 'mongoose';
+import fs from 'fs/promises';
+import path from 'path';
+import { Job } from '../types';
+
 // Job Schema and Model
 const jobSchema = new mongoose.Schema({
   name: { type: String },
@@ -11,11 +17,6 @@ const jobSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const JobModel = mongoose.models.Job || mongoose.model('Job', jobSchema);
-import fs from 'fs/promises';
-import path from 'path';
-import { Job } from '../types';
-
-import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://saudijob39_db_user:samad2425@saudijob.nussq53.mongodb.net/saudijob?retryWrites=true&w=majority';
 
