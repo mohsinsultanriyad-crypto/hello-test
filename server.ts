@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import * as storage from './services/storage';
+import * as storage from './services/storage.js';
 
 dotenv.config();
 
