@@ -70,10 +70,6 @@ export async function deleteJob(id) {
   return !!result;
 }
 
-export async function incrementViews(id) {
   await connectDB();
   await JobModel.findByIdAndUpdate(id, { $inc: { views: 1 } });
 }
-}
-
-// The old incrementViews function has been replaced with the new MongoDB-based implementation
