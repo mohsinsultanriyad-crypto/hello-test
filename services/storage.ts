@@ -64,12 +64,14 @@ export async function updateJob(id, data) {
   return job;
 }
 
+
 export async function deleteJob(id) {
   await connectDB();
   const result = await JobModel.findByIdAndDelete(id);
   return !!result;
 }
 
+export async function incrementViews(id) {
   await connectDB();
   await JobModel.findByIdAndUpdate(id, { $inc: { views: 1 } });
 }
